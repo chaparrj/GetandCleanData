@@ -53,6 +53,12 @@ Train <- cbind(idTrain, yTrain, xTrainR)
 
 # To have a single data set, Test and Train are merged
 allData <- merge(Test, Train, by = intersect(names(Test), names(Train)), all = TRUE)
+# Finally, a new independent, tidy data set is created
+# with the average of each variable for each activity and each subject
+finalData <- allData %>% 
+        group_by(subjectID, activityText) %>% 
+        dplyr::summarise_all(funs(mean))
 # Dump the merged data set to a separate file
-write.table(allData, file = "UCI-HAR_allData.csv")
+write.table(finalData, file = "UCI-HAR_finalData.csv")
+
 

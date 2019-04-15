@@ -34,18 +34,22 @@ The steps implemented in run_analysis.R are:
 
 7. Repeat steps 2 to 4 for training data, creating data frames called idTrain, xTrain and yTrain. All training data frames are bind to create a "Train" data set.  
 
-8. Create the final data set, "allData", by merging "Test" and "Train" data sets by the intersect of all variables.  
+8. Create "allData" data set by merging "Test" and "Train" data sets by the intersect of all variables.  
 
-9. Dump the merged data set to a separate file. The file is created on the current directory under the name "UCI-HAR_allData.csv"  
+9. Create the "finalData" data frame, taking "allData" grouping by "subjectID" and "activityText" and computing the mean() of each variable on accelometer variables. 
+
+10. Dump the final data set, "finalData", to a separate file. The file is created on the current directory under the name "UCI-HAR_finalData.csv"  
 
 ## Final Data Code Book
 
 The final data set has the following variables:
 
 - subjectID: It is the identifier of the subject performing the test.
-- activityID: numeric identifier of the activity performed by the subject during the test.
 - activityText: string name of the activity performed by the subject during the test.
-- 86-variables that collect mean and standard deviation of the accelerometer of a smartphone while the subject performed a particular activity (as logged on columns two and three). Additional details on these variables can be found on the original README.txt file inside the UCI-HAR folder that contains raw data.  
+- activityID : mean of the numeric identifier of the activity performed by the subject during the test. 
+- 86-variables with the mean value for accelerometer measurements on a smartphone while the subject performed a particular activity (as logged on columns two and three).  
+    
+  
   
   
   
