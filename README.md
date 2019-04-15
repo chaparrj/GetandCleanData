@@ -10,6 +10,8 @@ The goal of the assignment is to prepare a single data set that is tidy, taking 
 Files included in this folder are:  
 
 - README.md : the file you are currently reading.  
-- UCI_HAR folder : original data set provided for the assignment.  
+- UCI_HAR folder : original data set provided for the assignment(1).  
 - run_analysis.R : R script that reads raw data and creates the tidy data set.  
 - CodeBook.md : file describing the variables in the final data set.  
+
+(1) Note: Two files from raw data were uploaded to Github in compressed format. Uncompress those files to correctly execute run_analysis.R.
